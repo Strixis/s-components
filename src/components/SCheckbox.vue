@@ -9,7 +9,7 @@
         @change="updateInput"
       )
       span.s-checkbox_marker(:class="{'s-checkbox_marker__checked': isChecked}")
-      <slot>Checkbox</slot>
+      slot Default slot
 </template>
 
 <script>

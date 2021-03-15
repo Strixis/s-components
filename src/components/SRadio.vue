@@ -9,7 +9,7 @@
         @change="updateInput"
       )
       span.s-radio_marker(:class="{'s-radio_marker__checked': isChecked}")
-      <slot>radio</slot>
+      slot Default slot
 </template>
 
 <script>
@@ -28,6 +28,7 @@ export default {
       required: true,
     },
     modelValue: {
+      type: String,
       default: '',
     },
   },
@@ -79,7 +80,7 @@ export default {
     box-sizing: border-box
     margin: 0 7px 0 0
     border: 1px solid black
-    border-radius: 0
+    border-radius: 50%
     outline: none
     background: white
     &__checked
