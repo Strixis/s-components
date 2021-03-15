@@ -83,6 +83,7 @@ export default {
     letter-spacing: normal
     text-align: left
     text-decoration: none
+    color: black
   &_input
     opacity: 0
     position: absolute
@@ -100,4 +101,9 @@ export default {
     background: white
     &__checked
       background: red
+  &_label:hover &_marker,
+  &_input:active ~ &_marker,
+  &_input:focus ~ &_marker
+    border: 1px solid green
+    outline: none
 </style>
