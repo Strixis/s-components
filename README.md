@@ -7,6 +7,7 @@
 
 ### Использование:
 * ***<a name="checkbox">Чекбокс</a>***
+
 [Ссылка](./src/components/SCheckbox.vue)
 
 Props:
@@ -50,6 +51,7 @@ export default {
 ```
 
 * ***<a name="radio">Радиокнопка</a>***
+
 [Ссылка](./src/components/SRadio.vue)
 
 Props:
@@ -94,6 +96,7 @@ export default {
 ```
 
 * ***<a name="textfield">Текстовое поле</a>***
+
 [Ссылка](./src/components/STextfield.vue)
 
 Props:
