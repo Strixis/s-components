@@ -9,26 +9,18 @@
 * ***<a name="checkbox">Чекбокс</a>***
 
 Props:
-
-  | uid - string, required
-  
-  | value - string
+- uid - string, required
+- value - string
   
 Slots:
-
-  | default - слот внутри label для описания чекбокса
+- default - слот внутри label для описания чекбокса
   
 Classes:
-
-  | s-checkbox - контейнер
-  
-  | s-checkbox_label - метка с текстом или иным содержимым
-  
-  | s-checkbox_input - скрытый нативный чекбокс
-  
-  | s-checkbox_marker - видимая замена чекбокса
-  
-  | s-checkbox_marker__checked - вид чекбокса когда он выбран
+- s-checkbox - контейнер
+- s-checkbox_label - метка с текстом или иным содержимым
+- s-checkbox_input - скрытый нативный чекбокс
+- s-checkbox_marker - видимая замена чекбокса
+- s-checkbox_marker__checked - вид чекбокса когда он выбран
 
 Пример:
 ```
@@ -59,26 +51,18 @@ export default {
 * ***<a name="radio">Радиокнопка</a>***
 
 Props:
-
-  | uid - string, required
-  
-  | value - string, required
+- uid - string, required
+- value - string, required
   
 Slots:
-
-  | default - слот внутри label для описания радиокнопки
+- default - слот внутри label для описания радиокнопки
   
 Classes:
-
-  | s-radio - контейнер
-  
-  | s-radio_label - метка с текстом или иным содержимым
-  
-  | s-radio_input - скрытая нативная радиокнопка
-  
-  | s-radio_marker - видимая замена радиокнопки
-  
-  | s-radio_marker__checked - вид радиокнопки когда она выбрана
+- s-radio - контейнер
+- s-radio_label - метка с текстом или иным содержимым
+- s-radio_input - скрытая нативная радиокнопка
+- s-radio_marker - видимая замена радиокнопки
+- s-radio_marker__checked - вид радиокнопки когда она выбрана
 
 Пример:
 ```
@@ -110,28 +94,19 @@ export default {
 * ***<a name="textfield">Текстовое поле</a>***
 
 Props:
-
-  | uid - string, required
-  
-  | placeholder - string
-  
-  | error - boolean
+- uid - string, required
+- placeholder - string
+- error - boolean
   
 Slots:
-
-  | default - слот внутри label для описания текстового поля
-  
-  | error - слот после input внутри обертки error для описания ошибки  
+- default - слот внутри label для описания текстового поля
+- error - слот после input внутри обертки error для описания ошибки  
   
 Classes:
-
-  | s-textfield - контейнер
-  
-  | s-textfield_label - метка с текстом или иным содержимым
-  
-  | s-textfield_input - скрытый нативный чекбокс
-  
-  | s-textfield_error - контейнер с текстом или иным содержимым для описания ошибки
+- s-textfield - контейнер
+- s-textfield_label - метка с текстом или иным содержимым
+- s-textfield_input - скрытый нативный чекбокс
+- s-textfield_error - контейнер с текстом или иным содержимым для описания ошибки
 
 Пример:
 ```
