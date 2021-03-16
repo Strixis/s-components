@@ -25,7 +25,7 @@ module.exports = (_, { mode }) => ({
     alias: {
       components: path.resolve(__dirname, 'src', 'components'),
       styles: path.resolve(__dirname, 'src', 'assets', 'styles'),
-      img: path.resolve(__dirname, 'src', 'assets', 'img'),
+      img: path.resolve(__dirname, 'src', 'img'),
       fonts: path.resolve(__dirname, 'src', 'assets', 'fonts'),
     },
   },

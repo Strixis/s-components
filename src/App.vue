@@ -32,18 +32,24 @@
     p Text is {{ testTextfield }}
     s-textfield(uid="textfield-default" v-model="testTextfieldDefault")
     p Text of default textfield is {{ testTextfieldDefault }}
+
+    s-button.test(type="link" buttonEvent="click", :event="increaseTestButtonValue")
+    s-button.test(buttonEvent="click" :event="decreaseTestButtonValue")
+    p Test button value: {{ testButtonValue }}
 </template>
 
 <script>
 import SCheckbox from 'components/SCheckbox';
 import SRadio from 'components/SRadio';
 import STextfield from 'components/STextfield';
+import SButton from 'components/SButton';
 
 export default {
   components: {
     SCheckbox,
     SRadio,
     STextfield,
+    SButton,
   },
   data() {
     return {
@@ -54,7 +60,18 @@ export default {
       testRadioDefault: '',
       testTextfield: '',
       testTextfieldDefault: '',
+      testButtonValue: 0,
     };
+  },
+  methods: {
+    increaseTestButtonValue(event) {
+      this.testButtonValue++;
+      event.preventDefault();
+    },
+    decreaseTestButtonValue(event) {
+      this.testButtonValue--;
+      event.preventDefault();
+    },
   },
 }
 </script>
