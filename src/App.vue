@@ -83,4 +83,6 @@ export default {
   background: green
 .test__checkbox .s-checkbox_marker__checked
   background: blue
+.s-button
+  border: 2px solid green
 </style>

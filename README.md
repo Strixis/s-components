@@ -4,6 +4,7 @@
 1. [Чекбокс](#checkbox)
 2. [Радиокнопка](#radio)
 3. [Текстовое поле ввода](#textfield)
+4. [Кнопка](#button)
 
 ### Использование:
 * ***<a name="checkbox">Чекбокс</a>***
@@ -95,52 +96,55 @@ export default {
 <style>
 ```
 
-* ***<a name="textfield">Текстовое поле</a>***
+* ***<a name="button">Кнопка</a>***
 
-[Ссылка](./src/components/STextfield.vue)
+[Ссылка](./src/components/SButton.vue)
 
 Props:
-- uid - string, required
-- placeholder - string
-- error - boolean
+- type - string, может быть {'button' - для кнопки, 'link' - для ссылки, 'submit' - для input(type="submit")}
+- url - string
+- buttonEvent - string
+- event - function
   
 Slots:
-- default - слот внутри label для описания текстового поля
-- error - слот после input внутри обертки error для описания ошибки  
+- default - слот для описания кнопки
   
 Classes:
-- s-textfield - контейнер
-- s-textfield_label - метка с текстом или иным содержимым
-- s-textfield_input - скрытый нативный чекбокс
-- s-textfield_error - контейнер с текстом или иным содержимым для описания ошибки
+- s-button - контейнер
+- s-button_label - контейнер для кнопки если выбран тип 'submit'
+- s-button_input - скрытый нативный input(type="submit")
 
 Пример:
 ```
 <template lang="pug">
-  s-textfield(
-    uid="id"
-    v-model="textfield"
-    paceholder="Placeholder for textfield"
-    :error="textfield === ''"
+  s-button.test(
+    buttonEvent="click"
+    :event="increaseTestButtonValue"
   )
+  p Button value: {{ buttonValue }}
 </template>
 
 <script>
-import STextfield from 'yourfolder/STextfield'
+import SButton from 'yourfolder/SButton'
 export default {
   components: {
-    STextfield,
+    SButton,
   },
   data() {
     return {
-      textfield: '',
+      buttonValue: '',
     };
+  },
+   methods: {
+    increaseTestButtonValue(event) {
+      this.testButtonValue++;
+    },
   },
 }
 </script>
 
 <style lang="sass">
-.s-textfield_error
-  color: red
+.s-button
+  border: 2px solid green
 <style>
 ```
