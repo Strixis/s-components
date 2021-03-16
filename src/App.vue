@@ -33,7 +33,9 @@
     s-textfield(uid="textfield-default" v-model="testTextfieldDefault")
     p Text of default textfield is {{ testTextfieldDefault }}
 
-    s-button(type="submit") Кнопка
+    s-button.test(type="link" buttonEvent="click", :event="increaseTestButtonValue")
+    s-button.test(buttonEvent="click" :event="decreaseTestButtonValue")
+    p Test button value: {{ testButtonValue }}
 </template>
 
 <script>
@@ -58,7 +60,18 @@ export default {
       testRadioDefault: '',
       testTextfield: '',
       testTextfieldDefault: '',
+      testButtonValue: 0,
     };
+  },
+  methods: {
+    increaseTestButtonValue(event) {
+      this.testButtonValue++;
+      event.preventDefault();
+    },
+    decreaseTestButtonValue(event) {
+      this.testButtonValue--;
+      event.preventDefault();
+    },
   },
 }
 </script>

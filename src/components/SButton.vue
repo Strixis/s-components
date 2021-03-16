@@ -1,14 +1,14 @@
 <template lang="pug">
-    button.s-button(v-if="type === 'button'")
-      slot
-    a.s-button(:href="link" v-else-if="type === 'link'")
-      slot
+    button.s-button(v-if="type === 'button'" @[buttonEvent]="event")
+      slot Button
+    a.s-button(:href="url" v-else-if="type === 'link'" @[buttonEvent]="event")
+      slot Button
     label.s-button_label(v-else-if="type === 'submit'")
-      input.s-button_input(type="submit")
+      input.s-button_input(type="submit" @[buttonEvent]="event")
       span.s-button
-        slot
-    div.s-button(v-else)
-      slot
+        slot Button
+    div.s-button(v-else @[buttonEvent]="event")
+      slot Button
 </template>
 
 <script>
@@ -21,6 +21,12 @@ export default {
     url: {
       type: String,
       default: '#',
+    },
+    buttonEvent: {
+      type: String,
+    },
+    event: {
+      type: Function,
     },
   },
 }
@@ -48,15 +54,15 @@ export default {
   text-decoration: none
   color: black
   position: relative
+  &:focus
+    background: whitesmoke
+    outline: none
+    border: 1px solid black
   &:hover
     background: grey
     outline: none
     border: 1px solid black
     cursor: pointer
-  &:focus
-    background: whitesmoke
-    outline: none
-    border: 1px solid black
   &:active
     background: white
     outline: none
@@ -73,15 +79,15 @@ export default {
     position: absolute
     opacity: 0
     z-index: -1
+    &:focus + .s-button
+      background: whitesmoke
+      outline: none
+      border: 1px solid black
     &:hover + .s-button
       background: grey
       outline: none
       border: 1px solid black
       cursor: pointer
-    &:focus + .s-button
-      background: whitesmoke
-      outline: none
-      border: 1px solid black
     &:active + .s-button
       background: white
       outline: none
