@@ -32,18 +32,22 @@
     p Text is {{ testTextfield }}
     s-textfield(uid="textfield-default" v-model="testTextfieldDefault")
     p Text of default textfield is {{ testTextfieldDefault }}
+
+    s-button(type="submit") Кнопка
 </template>
 
 <script>
 import SCheckbox from 'components/SCheckbox';
 import SRadio from 'components/SRadio';
 import STextfield from 'components/STextfield';
+import SButton from 'components/SButton';
 
 export default {
   components: {
     SCheckbox,
     SRadio,
     STextfield,
+    SButton,
   },
   data() {
     return {
