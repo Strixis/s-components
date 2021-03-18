@@ -1,5 +1,5 @@
 <template lang="pug">
-  div
+  s-container
     p Test
 
     s-checkbox.test(uid="check-1" v-model="checkedValues") Test checkbox 1
@@ -43,6 +43,7 @@ import SCheckbox from 'components/SCheckbox';
 import SRadio from 'components/SRadio';
 import STextfield from 'components/STextfield';
 import SButton from 'components/SButton';
+import SContainer from 'components/SContainer';
 
 export default {
   components: {
@@ -50,6 +51,7 @@ export default {
     SRadio,
     STextfield,
     SButton,
+    SContainer,
   },
   data() {
     return {
