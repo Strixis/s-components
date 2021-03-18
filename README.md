@@ -150,7 +150,7 @@ export default {
 <style>
 ```
 
-* ***<a name="container">Чекбокс</a>***
+* ***<a name="container">Контейнер</a>***
 
 [Ссылка](./src/components/SContainer.vue)
 Slots:
