@@ -5,6 +5,7 @@
 2. [Радиокнопка](#radio)
 3. [Текстовое поле ввода](#textfield)
 4. [Кнопка](#button)
+5. [Контейнер](#container)
 
 ### Использование:
 * ***<a name="checkbox">Чекбокс</a>***
@@ -146,5 +147,31 @@ export default {
 <style lang="sass">
 .s-button
   border: 2px solid green
+<style>
+```
+
+* ***<a name="container">Чекбокс</a>***
+
+[Ссылка](./src/components/SContainer.vue.vue)
+Slots:
+- default - слот для контента
+  
+Classes:
+- s-container - контейнер
+
+Пример:
+```
+<template lang="pug">
+  s-container
+    img(src="#" alt="img")
+    p Там выше картинка.
+    div
+      p Правда-правда. А ниже ссылка.
+      a(href="#") Это ссылка
+</template>
+
+<style lang="sass">
+.s-container
+  background: whitesmoke
 <style>
 ```
