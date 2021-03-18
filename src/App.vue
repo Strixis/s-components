@@ -36,6 +36,10 @@
     s-button.test(type="link" buttonEvent="click", :event="increaseTestButtonValue")
     s-button.test(buttonEvent="click" :event="decreaseTestButtonValue")
     p Test button value: {{ testButtonValue }}
+
+    s-slider(:slides="3")
+      .slide(v-for="(slide, index) in ['1', '2', '3']" :key="index")
+        p Slide {{ slide }}
 </template>
 
 <script>
@@ -44,6 +48,7 @@ import SRadio from 'components/SRadio';
 import STextfield from 'components/STextfield';
 import SButton from 'components/SButton';
 import SContainer from 'components/SContainer';
+import SSlider from 'components/SSlider';
 
 export default {
   components: {
@@ -52,6 +57,7 @@ export default {
     STextfield,
     SButton,
     SContainer,
+    SSlider,
   },
   data() {
     return {
@@ -87,4 +93,7 @@ export default {
   background: blue
 .s-button
   border: 2px solid green
+.slide
+  width: 100%
+  border: 2px solid black
 </style>
