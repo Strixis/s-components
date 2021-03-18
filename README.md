@@ -153,6 +153,7 @@ export default {
 * ***<a name="container">Контейнер</a>***
 
 [Ссылка](./src/components/SContainer.vue)
+
 Slots:
 - default - слот для контента
   
