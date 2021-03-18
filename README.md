@@ -152,7 +152,7 @@ export default {
 
 * ***<a name="container">Чекбокс</a>***
 
-[Ссылка](./src/components/SContainer.vue.vue)
+[Ссылка](./src/components/SContainer.vue)
 Slots:
 - default - слот для контента
   
