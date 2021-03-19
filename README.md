@@ -6,6 +6,7 @@
 3. [Текстовое поле ввода](#textfield)
 4. [Кнопка](#button)
 5. [Контейнер](#container)
+6. [Слайдер](#slider)
 
 ### Использование:
 * ***<a name="checkbox">Чекбокс</a>***
@@ -97,6 +98,60 @@ export default {
 <style>
 ```
 
+* ***<a name="textfield">Текстовое поле ввода</a>***
+
+[Ссылка](./src/components/STextfield.vue)
+
+Props:
+- uid - string, required
+- placeholder - string
+- error - boolean
+  
+Slots:
+- default - слот внутри label для описания текстового поля
+- error - слот для описания ошибки при вводе
+  
+Classes:
+- s-textfield - контейнер
+- s-textfield_label - метка с текстом или иным содержимым
+- s-textfield_input - поле ввода
+- s-checkbox_error - контейнер для описания ошибки
+
+Пример:
+```
+<template lang="pug">
+  s-textfield(
+      uid="textfield"
+      placeholder="placeholder"
+      v-model="textfield"
+      :error="textfield === ''"
+    )
+      | Textfield name:
+      template(v-slot:error)
+        | Message about error
+</template>
+
+<script>
+import STextfield from 'yourfolder/STextfield'
+export default {
+  components: {
+    STextfield,
+  },
+  data() {
+    return {
+      textfield: '',
+    };
+  },
+}
+</script>
+
+<style lang="sass">
+.s-textfield_error
+  color: green
+<style>
+```
+
+
 * ***<a name="button">Кнопка</a>***
 
 [Ссылка](./src/components/SButton.vue)
@@ -171,8 +226,61 @@ Classes:
       a(href="#") Это ссылка
 </template>
 
+<script>
+import SContainer from 'yourfolder/SContainer'
+
+export default {
+  components: {
+    SContainer,
+  },
+}
+</script>
+
 <style lang="sass">
 .s-container
   background: whitesmoke
+<style>
+```
+
+### Использование:
+* ***<a name="slider">Слайдер</a>***
+
+[Ссылка](./src/components/SSlider.vue)
+
+Props:
+- slides - number, required
+  
+Slots:
+- default - слот внутри ленты для слайда
+  
+Classes:
+- s-slider - контейнер
+- s-slider_tape - лента слайдера
+- s-slider_controls - контейнер для элементов управления
+- s-slider_control - элементы управления
+- s-slider_control__left - левый элемент управления
+- s-slider_control__right - правый элемент управления
+
+Пример:
+```
+<template lang="pug">
+  s-slider(:slides="3")
+    .slide(v-for="(slide, index) in ['1', '2', '3']" :key="index")
+      p Slide {{ slide }}
+</template>
+
+<script>
+import SSlider from 'yourfolder/SSlider'
+export default {
+  components: {
+    SSlider,
+  },
+}
+</script>
+
+<style lang="sass">
+.slide
+  width: 100%
+  border: 2px solid black
 <style>
 ```
